@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Facebook Ads/Posts API
+  description: API to retrieve latest posts and ads from a specific Facebook Page using Graph API.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8002
+    description: Local Development Server
+
+paths:
+  /api/posts:
+    get:
+      summary: Retrieve latest posts
+      description: Fetches the latest public posts from the configured Facebook Page.
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 5
+          description: Number of posts to retrieve (max 100)
+        - in: query
+          name: keyword
+          schema:
+            type: string
+          description: Filter posts by keyword (case-insensitive)
+      responses:
+        '200':
+          description: A list of posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: "928220124022374_123456789"
+                        message:
+                          type: string
+                          example: "Découvrez nos nouvelles offres !"
+                        created_time:
+                          type: string
+                          format: date-time
+                          example: "2023-10-27T10:30:00+0000"
+                        full_picture:
+                          type: string
+                          format: uri
+                          example: "https://scontent..."
+                        permalink_url:
+                          type: string
+                          format: uri
+                          example: "https://facebook.com/..."
+        '500':
+          description: Facebook API Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: "Facebook API Error (400): Invalid OAuth 2.0 Access Token"
