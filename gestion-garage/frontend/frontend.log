@@ -1,0 +1,645 @@
+
+> frontend@0.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         |  Raw size
+main.js             | main          |  96.28 kB | 
+polyfills.js        | polyfills     |  90.20 kB | 
+styles.css          | styles        |  27.97 kB | 
+
+                    | Initial total | 214.44 kB
+
+Application bundle generation complete. [1.723 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.403 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./components/client-form/client-form.component"[0m
+
+    src/app/app.routes.ts:6:36:
+[37m      6 │ ...mComponent } from [32m'./components/client-form/client-form.component'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './components/client-form/client-form.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:7:36:
+[37m      7 │ ...mComponent } from [32m'./components/client-form/client-form.component'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.115 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './components/client-form/client-form.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:7:36:
+[37m      7 │ ...mComponent } from [32m'./components/client-form/client-form.component'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/search/search.component.html:134:0:
+[37m      134 │ [32m</div>[37m
+          ╵ [32m~~~~~~[0m
+
+  Error occurs in the template of component SearchComponent.
+
+    src/app/components/search/search.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./search.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.243 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'saveClient' does not exist on type 'ApiService'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:90:17:
+[37m      90 │         this.api.[32msaveClient[37m(this.client as Client).subscribe({
+         ╵                  [32m~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'saved' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:91:19:
+[37m      91 │             next: ([32msaved[37m) => {
+         ╵                    [32m~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'err' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:94:20:
+[37m      94 │             error: ([32merr[37m) => console.error('Error saving client:', ...
+         ╵                     [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/search/search.component.html:134:0:
+[37m      134 │ [32m</div>[37m
+          ╵ [32m~~~~~~[0m
+
+  Error occurs in the template of component SearchComponent.
+
+    src/app/components/search/search.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./search.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG1: Property 'router' is private and only accessible within class 'VisiteFormComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-form/visite-form.component.html:7:38:
+[37m      7 │ ...button label="Back" (click)="[32mrouter[37m.navigate(['/vehicules', vehi...
+        ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteFormComponent.
+
+    src/app/components/visite-form/visite-form.component.ts:11:17:
+[37m      11 │     templateUrl: [32m'./visite-form.component.html'[37m
+         ╵                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.252 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'saveClient' does not exist on type 'ApiService'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:90:17:
+[37m      90 │         this.api.[32msaveClient[37m(this.client as Client).subscribe({
+         ╵                  [32m~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'saved' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:91:19:
+[37m      91 │             next: ([32msaved[37m) => {
+         ╵                    [32m~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'err' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/client-form/client-form.component.ts:94:20:
+[37m      94 │             error: ([32merr[37m) => console.error('Error saving client:', ...
+         ╵                     [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG1: Property 'router' is private and only accessible within class 'VisiteFormComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-form/visite-form.component.html:7:38:
+[37m      7 │ ...button label="Back" (click)="[32mrouter[37m.navigate(['/vehicules', vehi...
+        ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteFormComponent.
+
+    src/app/components/visite-form/visite-form.component.ts:11:17:
+[37m      11 │     templateUrl: [32m'./visite-form.component.html'[37m
+         ╵                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.196 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG1: Property 'router' is private and only accessible within class 'VisiteFormComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-form/visite-form.component.html:7:38:
+[37m      7 │ ...button label="Back" (click)="[32mrouter[37m.navigate(['/vehicules', vehi...
+        ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteFormComponent.
+
+    src/app/components/visite-form/visite-form.component.ts:11:17:
+[37m      11 │     templateUrl: [32m'./visite-form.component.html'[37m
+         ╵                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         |  Raw size
+main.js             | main          |  99.85 kB | 
+polyfills.js        | polyfills     |  90.20 kB | 
+styles.css          | styles        |  31.23 kB | 
+
+                    | Initial total | 221.28 kB
+
+Application bundle generation complete. [0.138 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 99.79 kB | 
+
+Application bundle generation complete. [0.140 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 99.86 kB | 
+
+Application bundle generation complete. [0.175 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+main.js             | main   | 100.40 kB | 
+styles.css          | styles |  31.27 kB | 
+
+Application bundle generation complete. [0.130 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 100.94 kB | 
+
+Application bundle generation complete. [0.202 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+main.js             | main   | 101.42 kB | 
+styles.css          | styles |  33.32 kB | 
+
+Application bundle generation complete. [0.227 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+main.js             | main   | 101.81 kB | 
+styles.css          | styles |  33.43 kB | 
+
+Application bundle generation complete. [0.172 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.266 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'saveVehicule' does not exist on type 'ApiService'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:141:17:
+[37m      141 │         this.api.[32msaveVehicule[37m(vehiculeToSave as Vehicule).subscri...
+          ╵                  [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'saved' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:142:19:
+[37m      142 │             next: ([32msaved[37m) => {
+          ╵                    [32m~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'err' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:145:20:
+[37m      145 │             error: ([32merr[37m) => console.error('Error saving vehicle:'...
+          ╵                     [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.229 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'saveVehicule' does not exist on type 'ApiService'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:141:17:
+[37m      141 │         this.api.[32msaveVehicule[37m(vehiculeToSave as Vehicule).subscri...
+          ╵                  [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'saved' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:142:19:
+[37m      142 │             next: ([32msaved[37m) => {
+          ╵                    [32m~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'err' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-form/vehicule-form.component.ts:145:20:
+[37m      145 │             error: ([32merr[37m) => console.error('Error saving vehicle:'...
+          ╵                     [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 132.55 kB | 
+polyfills.js        | polyfills     |  90.20 kB | 
+styles.css          | styles        |  34.80 kB | 
+
+                    | Initial total | 257.55 kB
+
+Application bundle generation complete. [0.147 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 132.73 kB | 
+
+Application bundle generation complete. [0.107 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.155 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:43:23:
+[37m      43 │     if (this.vehicule?.[32mclient[37m?.id) {
+         ╵                        [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:44:54:
+[37m      44 │       this.router.navigate(['/clients', this.vehicule.[32mclient[37m.id]);
+         ╵                                                       [32m~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.120 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.html:14:122:
+[37m      14 │ ...ue-100 flex items-center justify-between" *ngIf="vehicule.[32mclient[37m">
+         ╵                                                              [32m~~~~~~[0m
+
+  Error occurs in the template of component VehiculeDetailComponent.
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./vehicule-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.html:21:71:
+[37m      21 │ ...d text-blue-900">{{ vehicule.[32mclient[37m.nom }} {{ vehicule.client.p...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VehiculeDetailComponent.
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./vehicule-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.html:21:97:
+[37m      21 │ ...ue-900">{{ vehicule.client.nom }} {{ vehicule.[32mclient[37m.prenom }}</p>
+         ╵                                                  [32m~~~~~~[0m
+
+  Error occurs in the template of component VehiculeDetailComponent.
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./vehicule-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.html:24:47:
+[37m      24 │ ...Link]="['/clients', vehicule.[32mclient[37m.id]" class="text-blue-600 t...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VehiculeDetailComponent.
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./vehicule-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:43:23:
+[37m      43 │     if (this.vehicule?.[32mclient[37m?.id) {
+         ╵                        [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'client' does not exist on type 'Vehicule'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/vehicule-detail/vehicule-detail.component.ts:44:54:
+[37m      44 │       this.router.navigate(['/clients', this.vehicule.[32mclient[37m.id]);
+         ╵                                                       [32m~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 135.38 kB | 
+polyfills.js        | polyfills     |  90.20 kB | 
+styles.css          | styles        |  35.10 kB | 
+
+                    | Initial total | 260.68 kB
+
+Application bundle generation complete. [0.237 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 135.38 kB | 
+
+Application bundle generation complete. [0.154 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 135.59 kB | 
+
+Application bundle generation complete. [0.116 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.081 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "dt". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:58:128:
+[37m      58 │ ...-gray-400 uppercase tracking-widest mb-2">Centre de contrôl[32me</dt[37m>
+         ╵                                                               [32m~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:61:16:
+[37m      61 │                 [32m</div>[37m
+         ╵                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.078 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "dt". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:58:128:
+[37m      58 │ ...-gray-400 uppercase tracking-widest mb-2">Centre de contrôl[32me</dt[37m>
+         ╵                                                               [32m~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:61:16:
+[37m      61 │                 [32m</div>[37m
+         ╵                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.082 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "dt". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:58:128:
+[37m      58 │ ...-gray-400 uppercase tracking-widest mb-2">Centre de contrôl[32me</dt[37m>
+         ╵                                                               [32m~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:61:16:
+[37m      61 │                 [32m</div>[37m
+         ╵                 [32m~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.159 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:48:177:
+[37m      48 │ ...idest shadow-lg border-2 border-white/10" *ngIf="visite.[32mvehicule[37m">
+         ╵                                                            [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:49:38:
+[37m      49 │ ...                  {{ visite.[32mvehicule[37m.immatriculationPart1 }}-{{...
+         ╵                                [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:49:81:
+[37m      49 │ ...iculationPart1 }}-{{ visite.[32mvehicule[37m.immatriculationPart2 }}-{{...
+         ╵                                [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:49:124:
+[37m      49 │ ...immatriculationPart2 }}-{{ visite.[32mvehicule[37m.immatriculationPart3 }}
+         ╵                                      [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:52:115:
+[37m      52 │ ...king-tighter" *ngIf="visite.[32mvehicule[37m">{{ visite.vehicule.marque...
+         ╵                                [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:52:135:
+[37m      52 │ ..."visite.vehicule">{{ visite.[32mvehicule[37m.marque }} {{ visite.vehicu...
+         ╵                                [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG9: Property 'vehicule' does not exist on type 'VisiteTechnique'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/visite-detail/visite-detail.component.html:52:164:
+[37m      52 │ ...le">{{ visite.vehicule.marque }} {{ visite.[32mvehicule[37m.modele }}</h3>
+         ╵                                               [32m~~~~~~~~[0m
+
+  Error occurs in the template of component VisiteDetailComponent.
+
+    src/app/components/visite-detail/visite-detail.component.ts:11:15:
+[37m      11 │   templateUrl: [32m'./visite-detail.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         |  Raw size
+main.js             | main          | 137.04 kB | 
+polyfills.js        | polyfills     |  90.20 kB | 
+styles.css          | styles        |  37.91 kB | 
+
+                    | Initial total | 265.14 kB
+
+Application bundle generation complete. [0.203 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 137.04 kB | 
+
+Application bundle generation complete. [0.087 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+main.js             | main   | 143.32 kB | 
+styles.css          | styles |  38.99 kB | 
+
+Application bundle generation complete. [0.135 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 143.34 kB | 
+
+Application bundle generation complete. [0.245 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 143.34 kB | 
+
+Application bundle generation complete. [0.204 seconds]
+
+Page reload sent to client(s).
