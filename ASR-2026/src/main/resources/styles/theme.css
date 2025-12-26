@@ -1,0 +1,209 @@
+/* Global Variables */
+* {
+    -color-bg: #FFFFFF;
+    -color-surface: #F5F5F5;
+    -color-accent: #D32F2F;       /* Rouge Vif */
+    -color-text-primary: #212121;
+    -color-text-secondary: #757575;
+    -font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+
+.root {
+    -fx-background-color: -color-bg;
+    -fx-font-family: -font-family;
+}
+
+
+/* --- Text Styles --- */
+.h2 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-primary;
+}
+
+.text-muted {
+    -fx-text-fill: -color-text-secondary;
+    -fx-font-size: 12px;
+}
+
+.text-accent {
+    -fx-text-fill: -color-accent;
+    -fx-font-weight: bold;
+}
+
+/* --- Layouts --- */
+.order-panel {
+    -fx-background-color: -color-surface;
+    -fx-padding: 10px;
+    -fx-alignment: top-center;
+}
+
+.invoice-paper {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 30px 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-pref-width: 320px;
+    -fx-max-width: 320px;
+    -fx-alignment: top-center;
+    -fx-spacing: 10px;
+}
+
+.invoice-header {
+    -fx-alignment: center;
+    -fx-padding: 0 0 20px 0;
+    -fx-border-color: transparent transparent #000000 transparent;
+    -fx-border-style: dashed;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.invoice-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+}
+
+.invoice-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+.product-section {
+    -fx-background-color: -color-bg;
+    -fx-padding: 20px;
+}
+
+/* --- Components: Order List --- */
+.panel-header {
+    -fx-padding: 0 0 15px 0;
+    -fx-border-color: transparent transparent #333 transparent;
+    -fx-border-width: 1px;
+}
+
+.order-item {
+    -fx-padding: 10px;
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 8px;
+}
+
+.totals-box {
+    -fx-padding: 15px 0;
+    -fx-border-color: #000000 transparent transparent transparent;
+    -fx-border-style: dashed;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.total-row Label {
+    -fx-text-fill: -color-text-secondary;
+    -fx-font-size: 14px;
+}
+
+.total-row-grand Label {
+    -fx-text-fill: -color-accent;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* --- Components: Category Bar --- */
+.category-bar {
+    -fx-padding: 0 0 15px 0;
+    -fx-spacing: 10px;
+}
+
+.category-btn {
+    -fx-background-color: -color-surface;
+    -fx-text-fill: -color-text-secondary;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+}
+
+.category-btn:selected {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+/* --- Components: Product Grid --- */
+.grid-scroll {
+    -fx-background: -color-bg;
+    -fx-background-color: transparent;
+}
+
+.grid-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.product-card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 12px;
+    -fx-padding: 10px;
+    -fx-pref-width: 160px;
+    -fx-pref-height: 180px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 2, 2);
+    -fx-cursor: hand;
+}
+
+.product-card:hover {
+    -fx-background-color: derive(-color-surface, 10%);
+    -fx-translate-y: -2px;
+}
+
+.product-img-placeholder {
+    -fx-background-color: #333;
+    -fx-background-radius: 8px;
+}
+
+.product-name {
+    -fx-text-fill: -color-text-primary;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.product-price {
+    -fx-text-fill: -color-accent;
+    -fx-font-size: 14px;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: #FFFFFF; /* White on Red */
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+/* --- Specific Text Colors for Light Theme --- */
+.order-panel .label {
+    -fx-text-fill: -color-text-primary;
+}
+
+.order-item .label {
+    -fx-text-fill: -color-text-primary;
+}
+
+.total-row .label, .total-row-grand .label {
+    -fx-text-fill: -color-text-primary;
+}
+
+.text-accent {
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
+
+.h2 {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-primary;
+}
+
+.text-muted {
+    -fx-text-fill: -color-text-secondary;
+    -fx-font-size: 12px;
+}
+
