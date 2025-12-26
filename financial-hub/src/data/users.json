@@ -1,0 +1,22 @@
+[
+  {
+    "id": "26626656",
+    "firstName": "Younes",
+    "lastName": "Sabach",
+    "email": "younes.sabach@financialhub.com",
+    "phone": "0610674512",
+    "role": "Administrator",
+    "status": "Active",
+    "lastLogin": "2024-12-25T10:00:00Z"
+  },
+  {
+    "id": "12345678",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "adam.yahya@financialhub.com",
+    "phone": "0700000000",
+    "role": "User",
+    "status": "Active",
+    "lastLogin": "2024-12-20T14:30:00Z"
+  }
+]
