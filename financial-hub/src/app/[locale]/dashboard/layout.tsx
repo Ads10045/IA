@@ -21,18 +21,42 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+import USERS_DATA from "@/data/users.json"
+
 export default function DashboardLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
     const [sidebarOpen, setSidebarOpen] = useState(true)
+    const [user, setUser] = useState<{ name: string, email: string } | null>(null)
     const router = useRouter()
 
     useEffect(() => {
         const session = Cookies.get("auth_token")
-        if (!session) {
-            router.push("/login")
+        // console.log("Dashboard Session Check:", session);
+
+        // if (!session) {
+        //     router.push("/login")
+        // }
+
+        if (session) {
+            let userId = "";
+            if (session.startsWith("ibm-direct-session-")) {
+                userId = session.replace("ibm-direct-session-", "");
+            } else if (session === "valid-session") {
+                userId = "26626656";
+            }
+
+            const foundUser = USERS_DATA.find((u: any) => u.id === userId || u.email === userId);
+            if (foundUser) {
+                setUser({
+                    name: `${foundUser.firstName} ${foundUser.lastName}`,
+                    email: foundUser.email
+                });
+            } else {
+                setUser({ name: "Utilisateur", email: userId || "Invité" });
+            }
         }
     }, [router])
 
@@ -107,10 +131,12 @@ export default function DashboardLayout({
                         </div>
 
                         <div className="flex items-center text-sm font-medium text-gray-700 gap-2 cursor-pointer pl-4 border-l border-gray-200">
-                            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">CT</div>
+                            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                                {user?.name ? user.name.charAt(0) : "U"}
+                            </div>
                             <div className="hidden md:block text-right">
-                                <div className="leading-none">Mon Profil</div>
-                                <div className="text-xs text-gray-400 font-normal">Utilisateur</div>
+                                <div className="leading-none">{user?.name || "Mon Profil"}</div>
+                                <div className="text-xs text-gray-400 font-normal">{user?.email || "Utilisateur"}</div>
                             </div>
                             <ChevronDown className="w-4 h-4 text-gray-400" />
                         </div>

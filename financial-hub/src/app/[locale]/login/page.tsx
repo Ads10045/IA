@@ -1,12 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Lock, Smartphone, ShieldCheck, ArrowRight, CheckCircle2, QrCode, MessageSquare } from "lucide-react"
 import confetti from "canvas-confetti"
 import { authenticator } from 'otplib';
 import QRCode from 'qrcode';
+import { useRouter } from "next/navigation"
+import { useTranslations, useLocale } from 'next-intl';
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,6 +34,9 @@ const USERS: User[] = USERS_DATA;
 
 
 export default function LoginPage() {
+    const t = useTranslations('LoginPage');
+    const locale = useLocale();
+    const router = useRouter();
     const [step, setStep] = useState<"login" | "mfa" | "success">("login")
     const [mfaMethod, setMfaMethod] = useState<"app" | "sms">("app")
     const [loading, setLoading] = useState(false)
@@ -43,16 +48,18 @@ export default function LoginPage() {
     const [loginTab, setLoginTab] = useState<"cle-digitale" | "password" | "certificat" | "sso">("cle-digitale")
     const [currentUser, setCurrentUser] = useState<User | null>(null)
     const [registerSuccess, setRegisterSuccess] = useState(false)
+    const [otpValues, setOtpValues] = useState<string[]>(Array(6).fill(""))
+    const otpInputsRef = useRef<(HTMLInputElement | null)[]>([])
 
     // Generate secret and session check
     useEffect(() => {
         // Check for existing session
         const session = Cookies.get("auth_token")
         if (session) {
-            window.location.href = "/dashboard"
+            router.push(`/${locale}/dashboard`);
             return
         }
-    }, [])
+    }, [locale, router])
 
     const generateUserMFA = async (userId: string) => {
         // For this demo, we generate a new secret every time to ensure the user can scan it.
@@ -164,11 +171,11 @@ export default function LoginPage() {
                 console.log("SSO Identification Verified by IBM:", data.user);
                 const userId = localUser ? localUser.id : (data.user.id || usernameToSend);
 
-                Cookies.set("auth_token", `ibm-direct-session-${userId}`, { expires: 1 });
+                Cookies.set("auth_token", `ibm-direct-session-${userId}`, { expires: 1, path: '/' });
 
                 // Success!
                 setTimeout(() => {
-                    window.location.href = '/dashboard';
+                    router.push(`/${locale}/dashboard`);
                 }, 500);
             } else {
                 console.error("IBM Verification Failed:", data);
@@ -233,10 +240,8 @@ export default function LoginPage() {
         setMfaError(false)
         setLoading(true)
 
-        // Get all input values
-        const inputs = document.querySelectorAll('input[name="otp"]');
-        let token = "";
-        inputs.forEach((input: any) => token += input.value);
+        // Get token from state
+        const token = otpValues.join("");
 
         // Validation logic
         let isValid = false;
@@ -253,7 +258,7 @@ export default function LoginPage() {
                 setLoading(false)
                 setStep("success")
                 // Set persistent cookie (expires in 7 days)
-                Cookies.set("auth_token", "valid-session", { expires: 7 })
+                Cookies.set("auth_token", "valid-session", { expires: 7, path: '/' })
 
                 confetti({
                     particleCount: 150,
@@ -262,30 +267,44 @@ export default function LoginPage() {
                     colors: ['#008a5e', '#ffffff', '#f3f4f6']
                 })
                 setTimeout(() => {
-                    window.location.href = "/dashboard"
+                    router.push(`/${locale}/dashboard`);
                 }, 2500)
             } else {
                 setLoading(false)
                 setMfaError(true)
-                // Clear inputs on error
-                inputs.forEach((input: any) => input.value = "");
-                (inputs[0] as HTMLElement)?.focus();
+                // Clear state on error
+                setOtpValues(Array(6).fill(""))
+                otpInputsRef.current[0]?.focus();
             }
         }, 800)
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-        const value = e.target.value;
-        if (value.length === 1 && index < 5) {
-            const nextInput = document.querySelector(`input[name="otp"][data-index="${index + 1}"]`) as HTMLElement;
-            nextInput?.focus();
+        let value = e.target.value;
+
+        // Ensure strictly one digit and numeric
+        if (!/^\d*$/.test(value)) return;
+
+        // If length > 1, take the last character (fixes potential double input issues)
+        if (value.length > 1) {
+            value = value.slice(-1);
+        }
+
+        const newOtp = [...otpValues];
+        newOtp[index] = value;
+        setOtpValues(newOtp);
+
+        if (value && index < 5) {
+            otpInputsRef.current[index + 1]?.focus();
         }
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
-        if (e.key === "Backspace" && !e.currentTarget.value && index > 0) {
-            const prevInput = document.querySelector(`input[name="otp"][data-index="${index - 1}"]`) as HTMLElement;
-            prevInput?.focus();
+        if (e.key === "Backspace") {
+            if (!otpValues[index] && index > 0) {
+                // Focus previous input
+                otpInputsRef.current[index - 1]?.focus();
+            }
         }
     }
 
@@ -303,6 +322,11 @@ export default function LoginPage() {
                     <div className="hidden md:block text-sm font-medium text-gray-500">
                         Corporate Banking
                     </div>
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                        <a href="/fr/login" className="text-gray-900 hover:text-bnp-emerald">FR</a>
+                        <span className="text-gray-300">|</span>
+                        <a href="/en/login" className="text-gray-500 hover:text-bnp-emerald">EN</a>
+                    </div>
                 </div>
             </header>
 
@@ -312,7 +336,7 @@ export default function LoginPage() {
                 <div className="w-full md:w-1/2 lg:w-5/12 space-y-8">
                     <div className="space-y-4">
                         <div className="space-y-2">
-                            <h1 className="text-3xl font-bold text-gray-900">Accédez à vos comptes</h1>
+                            <h1 className="text-3xl font-bold text-gray-900">{t('title')}</h1>
                             <p className="text-gray-500">Sécurisez vos transactions avec notre portail dédié.</p>
                         </div>
                     </div>
@@ -358,7 +382,7 @@ export default function LoginPage() {
                                             <>
                                                 <form onSubmit={handleLogin} className="space-y-4">
                                                     <div className="space-y-2">
-                                                        <label className="text-sm font-medium text-gray-700">Numéro d'abonné / Email</label>
+                                                        <label className="text-sm font-medium text-gray-700">{t('subscriberId')}</label>
                                                         <Input
                                                             name="username"
                                                             placeholder="Ex: 26626656 ou email@domaine.com"
@@ -370,8 +394,22 @@ export default function LoginPage() {
                                                     </div>
 
                                                     <div className="space-y-2">
-                                                        <label className="text-sm font-medium text-gray-700">Clé d'accès / Mot de Passe</label>
+                                                        <label className="text-sm font-medium text-gray-700">{t('password')}</label>
                                                         <Input name="password" type="password" placeholder="Votre mot de passe" className="bg-gray-50" />
+                                                    </div>
+
+                                                    <div className="flex items-center space-x-2 py-2">
+                                                        <input
+                                                            type="checkbox"
+                                                            id="registerBrowser"
+                                                            className="w-4 h-4 text-bnp-emerald border-gray-300 rounded focus:ring-bnp-emerald"
+                                                            onChange={(e) => {
+                                                                if (e.target.checked) handleRegisterBrowser();
+                                                            }}
+                                                        />
+                                                        <label htmlFor="registerBrowser" className="text-sm text-gray-600">
+                                                            {registerSuccess ? <span className="text-green-600 font-medium">Navigateur enregistré !</span> : "Enregistrer ce navigateur"}
+                                                        </label>
                                                     </div>
 
                                                     <Button
@@ -379,7 +417,7 @@ export default function LoginPage() {
                                                         className="w-full text-base font-semibold py-6 rounded-full shadow-lg shadow-green-900/10 hover:shadow-green-900/20 transition-all"
                                                         disabled={loading}
                                                     >
-                                                        {loading ? "Connexion..." : "Se connecter"}
+                                                        {loading ? "Connexion..." : t('connect')}
                                                     </Button>
                                                 </form>
                                             </>
@@ -512,9 +550,11 @@ export default function LoginPage() {
                                                 {[0, 1, 2, 3, 4, 5].map((index) => (
                                                     <input
                                                         key={index}
+                                                        ref={(el) => { otpInputsRef.current[index] = el }}
                                                         data-index={index}
                                                         name="otp"
                                                         type="text"
+                                                        value={otpValues[index]}
                                                         maxLength={1}
                                                         onChange={(e) => handleInputChange(e, index)}
                                                         onKeyDown={(e) => handleKeyDown(e, index)}

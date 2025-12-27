@@ -3,30 +3,29 @@
 import { useState } from "react"
 import {
     X,
-    ArrowRight,
     Filter,
     Settings,
     Printer,
     Download,
-    TrendingUp,
-    TrendingDown,
-    MoreHorizontal,
-    ChevronUp
+    ChevronUp,
+    MoreHorizontal
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { useTranslations } from 'next-intl';
 
 export default function DashboardPage() {
+    const t = useTranslations('DashboardPage');
     const [showBanner, setShowBanner] = useState(true)
 
     return (
         <div className="space-y-6">
             {/* Breadcrumb */}
             <div className="flex items-center text-sm text-gray-500">
-                <span>Accueil</span>
+                <span>{t('home')}</span>
                 <span className="mx-2">›</span>
-                <span className="text-bnp-emerald font-semibold">Liste des comptes</span>
+                <span className="text-bnp-emerald font-semibold">{t('accountList')}</span>
             </div>
 
             {/* Promo Banner */}
@@ -42,15 +41,14 @@ export default function DashboardPage() {
                     <div className="relative z-10 max-w-2xl space-y-4">
                         <div className="flex items-center gap-2 text-green-400 text-xs font-bold uppercase tracking-wider">
                             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                            Ma Banque Entreprise
+                            {t('maBanque')}
                         </div>
-                        <h2 className="text-3xl font-bold">Facilitez-vous la vie avec la signature électronique !</h2>
+                        <h2 className="text-3xl font-bold">{t('promoTitle')}</h2>
                         <p className="text-gray-300 max-w-lg">
-                            E-signez sur Ma Banque Entreprise tous vos contrats de Banque à distance (EBICS, NetCash...).
-                            N'hésitez pas à contacter votre Chargé d'Affaires.
+                            {t('promoText')}
                         </p>
                         <Button className="mt-4 bg-bnp-emerald hover:bg-green-600 border-none text-white">
-                            En savoir +
+                            {t('knowMore')}
                         </Button>
                     </div>
 
@@ -64,7 +62,7 @@ export default function DashboardPage() {
                 {/* Toolbar */}
                 <div className="p-4 border-b border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
                     <Button variant="outline" className="text-gray-600 border-gray-300 hover:bg-gray-50 rounded-full px-6">
-                        Modifier un groupe de comptes
+                        {t('modifyGroup')}
                     </Button>
 
                     <div className="flex items-center gap-2">
@@ -77,10 +75,10 @@ export default function DashboardPage() {
 
                 {/* Table Header */}
                 <div className="bg-gray-50/50 p-4 grid grid-cols-12 gap-4 text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-100">
-                    <div className="col-span-4">Libellé / Numéro</div>
-                    <div className="col-span-3 text-right">Solde au 24/12/2025</div>
-                    <div className="col-span-3 text-right">Solde à venir</div>
-                    <div className="col-span-1 text-center">Devise</div>
+                    <div className="col-span-4">{t('labelNumber')}</div>
+                    <div className="col-span-3 text-right">{t('balanceDate')}</div>
+                    <div className="col-span-3 text-right">{t('futureBalance')}</div>
+                    <div className="col-span-1 text-center">{t('currency')}</div>
                     <div className="col-span-1"></div>
                 </div>
 
@@ -88,7 +86,7 @@ export default function DashboardPage() {
                 <div className="divide-y divide-gray-50">
                     {/* Group Header */}
                     <div className="p-4 bg-sky-50/30 flex justify-between items-center text-sm font-semibold text-bnp-emerald">
-                        <span>COMPTES COURANTS (1)</span>
+                        <span>{t('currentAccounts')} (1)</span>
                         <div className="flex items-center gap-8 pr-12">
                             <span className="text-gray-900">+ 23 358,97</span>
                             <span className="text-gray-900">+ 22 959,17</span>
@@ -120,7 +118,7 @@ export default function DashboardPage() {
 
                 {/* Footer */}
                 <div className="p-4 bg-gray-50 border-t border-gray-100 flex justify-end gap-12 font-bold text-gray-800 pr-24">
-                    <span>TOTAL DES SOLDES :</span>
+                    <span>{t('totalBalance')} :</span>
                     <span className="text-gray-900">+ 23 358,97</span>
                     <span className="text-gray-900">+ 22 959,17</span>
                     <span>EUR</span>
@@ -129,7 +127,7 @@ export default function DashboardPage() {
 
             <div className="flex justify-end">
                 <button className="text-bnp-emerald hover:underline text-sm font-medium flex items-center">
-                    Haut de page <div className="ml-1 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-bnp-emerald"></div>
+                    {t('topOfPage')} <div className="ml-1 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-b-[6px] border-b-bnp-emerald"></div>
                 </button>
             </div>
         </div>
